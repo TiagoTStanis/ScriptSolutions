@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Automação imediata com scripts Python, PowerShell e Batch para reduzir custos operacionais em 24h. Soluções personalizadas a partir de R$1.000. Economize tempo e dinheiro agora!">
+    <meta name="keywords" content="automação, scripts python, powershell, batch, reduzir custos, automação empresarial, scripts personalizados">
+    <meta name="author" content="Automação Inteligente">
+    <meta property="og:title" content="Automação Inteligente | Redução de Custos em 24h">
+    <meta property="og:description" content="Soluções de automação imediata com Python, PowerShell e Batch para sua empresa. A partir de R$1.000.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ScriptSolutions.com.br">
+    <title>Automação Inteligente | Scripts Python, PowerShell e Batch para Redução de Custos</title>
+    <link rel="canonical" href="https://www.ScriptSolutions.com.br">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="fa-robot.png">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #25D366);
+            width: 0%;
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Bar -->
+    <div class="loading-bar" id="loadingBar"></div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511969006891?text=Gostaria%20de%20solicitar%20um%20orçamento%20para%20automação" 
+       class="floating-btn bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl hover:bg-[#128C7E] transition-all duration-300">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-robot text-blue-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">Automação Inteligente</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#servicos" class="text-gray-600 hover:text-blue-600 transition">Serviços</a>
+                    <a href="#exemplos" class="text-gray-600 hover:text-blue-600 transition">Exemplos</a>
+                    <a href="#beneficios" class="text-gray-600 hover:text-blue-600 transition">Benefícios</a>
+                    <a href="#contato" class="text-gray-600 hover:text-blue-600 transition">Contato</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="p-2 text-gray-600 hover:text-blue-600" id="mobileMenuButton">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-md" id="mobileMenu">
+            <div class="flex flex-col space-y-4">
+                <a href="#servicos" class="text-gray-600 hover:text-blue-600 transition">Serviços</a>
+                <a href="#exemplos" class="text-gray-600 hover:text-blue-600 transition">Exemplos</a>
+                <a href="#beneficios" class="text-gray-600 hover:text-blue-600 transition">Benefícios</a>
+                <a href="#contato" class="text-gray-600 hover:text-blue-600 transition">Contato</a>
+                <a href="https://wa.me/5511969006891?text=Gostaria%20de%20solicitar%20um%20orçamento%20para%20automação" 
+                   class="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold text-center">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <span class="bg-blue-400 text-xs px-3 py-1 rounded-full uppercase font-bold">Transformação Digital</span>
+                    <h1 class="text-3xl md:text-5xl font-bold mt-4 mb-6 leading-tight">Automação Imediata com Python, PowerShell e Batch</h1>
+                    <p class="text-lg md:text-xl mb-8 opacity-90">Reduza custos operacionais em até 70% em apenas 24h com scripts personalizados para sua empresa</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/5511969006891?text=Gostaria%20de%20solicitar%20um%20orçamento%20para%20automação" 
+                           class="bg-white text-blue-600 px-6 py-4 rounded-lg font-bold hover:bg-blue-50 transition flex items-center justify-center pulse-animation">
+                            <i class="fab fa-whatsapp text-2xl mr-3"></i>
+                            SOLICITE AGORA PELO WHATSAPP
+                        </a>
+                        <div class="bg-blue-800 px-6 py-4 rounded-lg flex items-center">
+                            <span class="font-bold">A partir de</span>
+                            <span class="text-2xl font-bold ml-2">R$1.000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Automação de processos empresariais com Python, PowerShell e Batch" 
+                         class="rounded-lg shadow-2xl w-full object-cover h-[400px]"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section id="beneficios" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Resultados em Automatizar Processos</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Nossos scripts de automação entregam valor para sua operação</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-clock text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Economia de Tempo</h3>
+                    <p class="text-gray-600">Reduza horas de trabalho manual com scripts que executam tarefas repetitivas automaticamente, liberando sua equipe para atividades estratégicas.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Redução de Custos</h3>
+                    <p class="text-gray-600">Diminua despesas operacionais em até 70% eliminando erros humanos, reduzindo necessidade de horas extras e otimizando recursos.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Padronização e Segurança</h3>
+                    <p class="text-gray-600">Garanta consistência, qualidade e segurança nos processos com execuções idênticas toda vez, reduzindo riscos operacionais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicos" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossas Soluções de Automação</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Tecnologias robustas para transformar seus processos operacionais</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Python -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+                        <i class="fab fa-python text-white text-8xl opacity-30"></i>
+                        <div class="absolute">
+                            <h3 class="text-2xl font-bold text-white">Python</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Scripts Python personalizados para:</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span>Processamento de dados e planilhas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span>Automação de relatórios complexos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span>Integração entre sistemas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span>Web scraping e coleta de dados</span>
+                            </li>
+                        </ul>
+                        <div class="bg-blue-50 text-blue-800 px-4 py-2 rounded-lg text-center font-medium">
+                            Tempo médio de desenvolvimento: 1-3 dias
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PowerShell -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+                        <i class="fab fa-microsoft text-white text-8xl opacity-30"></i>
+                        <div class="absolute">
+                            <h3 class="text-2xl font-bold text-white">PowerShell</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Scripts PowerShell para:</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Gerenciamento de servidores Windows</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Automação de tarefas administrativas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Backup e monitoramento automatizado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Gestão de Active Directory</span>
+                            </li>
+                        </ul>
+                        <div class="bg-green-50 text-green-800 px-4 py-2 rounded-lg text-center font-medium">
+                            Tempo médio de desenvolvimento: 1-2 dias
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Batch -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-terminal text-white text-8xl opacity-30"></i>
+                        <div class="absolute">
+                            <h3 class="text-2xl font-bold text-white">Batch</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Scripts Batch para:</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                <span>Automação simples e rápida</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                <span>Organização de arquivos e pastas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                <span>Execução sequencial de programas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                <span>Tarefas de manutenção básica</span>
+                            </li>
+                        </ul>
+                        <div class="bg-purple-50 text-purple-800 px-4 py-2 rounded-lg text-center font-medium">
+                            Tempo médio de desenvolvimento: 4-12 horas
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples -->
+    <section id="exemplos" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Exemplos Práticos de Automação</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Casos reais que implementamos para nossos clientes com resultados mensuráveis</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Example 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="h-48 bg-blue-600 flex items-center justify-center relative">
+                        <i class="fas fa-file-excel text-white text-6xl opacity-20"></i>
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-600 to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-blue-800 text-white text-xs px-2 py-1 rounded">Python</span>
+                            <h3 class="text-xl font-bold text-white mt-2">Processamento de Planilhas</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Script que consolida automaticamente 15 planilhas diárias de diferentes departamentos, aplica fórmulas complexas e gera relatórios personalizados em PDF e Excel.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Antes:</span>
+                                <span>6 horas/dia</span>
+                            </div>
+                            <div class="flex justify-between text-sm font-medium text-blue-600">
+                                <span>Depois:</span>
+                                <span>15 minutos/dia</span>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 text-blue-800 px-3 py-1 rounded-full text-sm inline-block">Economia: R$3.200/mês</div>
+                    </div>
+                </div>
+                
+                <!-- Example 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="h-48 bg-green-600 flex items-center justify-center relative">
+                        <i class="fas fa-server text-white text-6xl opacity-20"></i>
+                        <div class="absolute inset-0 bg-gradient-to-t from-green-600 to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-green-800 text-white text-xs px-2 py-1 rounded">PowerShell</span>
+                            <h3 class="text-xl font-bold text-white mt-2">Backup de Servidores</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Solução que automatiza backup de 12 servidores críticos, verifica integridade dos arquivos, compacta e envia para nuvem com relatório diário por e-mail.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Antes:</span>
+                                <span>4 horas semanais</span>
+                            </div>
+                            <div class="flex justify-between text-sm font-medium text-green-600">
+                                <span>Depois:</span>
+                                <span>Totalmente automático</span>
+                            </div>
+                        </div>
+                        <div class="bg-green-50 text-green-800 px-3 py-1 rounded-full text-sm inline-block">Economia: R$1.800/mês</div>
+                    </div>
+                </div>
+                
+                <!-- Example 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="h-48 bg-purple-600 flex items-center justify-center relative">
+                        <i class="fas fa-folder-open text-white text-6xl opacity-20"></i>
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-600 to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-purple-800 text-white text-xs px-2 py-1 rounded">Batch</span>
+                            <h3 class="text-xl font-bold text-white mt-2">Organização de Arquivos</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Script que classifica automaticamente +2.000 arquivos diários em pastas por tipo, data e projeto, com registro em log e notificação de erros.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Antes:</span>
+                                <span>3 horas/dia</span>
+                            </div>
+                            <div class="flex justify-between text-sm font-medium text-purple-600">
+                                <span>Depois:</span>
+                                <span>5 minutos/dia</span>
+                            </div>
+                        </div>
+                        <div class="bg-purple-50 text-purple-800 px-3 py-1 rounded-full text-sm inline-block">Economia: R$2.100/mês</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://wa.me/5511969006891?text=Gostaria%20de%20ver%20mais%20exemplos%20de%20automação" 
+                   class="whatsapp-btn border-2 border-green-500 text-green-500 px-8 py-3 rounded-lg font-bold hover:text-white transition inline-flex items-center">
+                    <i class="fab fa-whatsapp text-xl mr-2"></i> QUERO MAIS EXEMPLOS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-blue-700 p-8 md:p-10 rounded-xl shadow-md">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">Pronto para automatizar seus processos?</h2>
+                <p class="text-blue-100 mb-8">Entre em contato agora mesmo e receba um diagnóstico gratuito dos processos que podem ser automatizados em sua empresa.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/5511969006891?text=Gostaria%20de%20um%20diagnóstico%20gratuito%20para%20automação" 
+                       class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-bold transition flex items-center justify-center">
+                        <i class="fab fa-whatsapp text-2xl mr-3"></i> FALE CONOSCO AGORA
+                    </a>
+                    
+                    <div class="bg-blue-800 text-white px-6 py-4 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <span>(11) 96900-6891</span>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-blue-800 rounded-lg p-4 inline-block">
+                    <div class="flex items-center">
+                        <i class="fas fa-gem text-yellow-400 text-2xl mr-3"></i>
+                        <div>
+                            <p class="font-bold">OFERTA ESPECIAL</p>
+                            <p class="text-sm">Primeiro script com 15% de desconto!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Perguntas Frequentes</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Tire suas dúvidas sobre nossos serviços de automação</p>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition font-medium flex justify-between items-center">
+                        <span>Quanto tempo leva para desenvolver um script personalizado?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-4 hidden">
+                        <p class="text-gray-600">O tempo varia conforme a complexidade do projeto. Scripts Batch simples podem ficar prontos em 4-12 horas, enquanto soluções em Python mais complexas levam 1-3 dias em média. Garantimos entrega em até 24h para scripts básicos.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition font-medium flex justify-between items-center">
+                        <span>Preciso ter conhecimento técnico para usar os scripts?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-4 hidden">
+                        <p class="text-gray-600">Não! Desenvolvemos soluções "plug-and-play" com interfaces simples quando necessário. Todos os scripts incluem instruções detalhadas de uso e suporte por 30 dias gratuitamente.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition font-medium flex justify-between items-center">
+                        <span>Como é calculado o valor do projeto?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-4 hidden">
+                        <p class="text-gray-600">O preço é baseado em: (1) Complexidade da automação, (2) Tempo estimado de desenvolvimento, e (3) Economia gerada para seu negócio. Projetos simples começam em R$1.000. Oferecemos análise gratuita para orçamento preciso.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 bg-gray-50 hover:bg-gray-100 transition font-medium flex justify-between items-center">
+                        <span>Os scripts funcionam em qualquer computador?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-4 hidden">
+                        <p class="text-gray-600">Desenvolvemos scripts específicos para seu ambiente (Windows, Linux, macOS). Antes da implementação, validamos todos os requisitos técnicos para garantir compatibilidade total com sua infraestrutura.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://wa.me/5511969006891?text=Tenho%20outras%20dúvidas%20sobre%20automação" 
+                   class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-bold transition inline-flex items-center">
+                    <i class="fas fa-question-circle mr-2"></i> TENHO OUTRAS DÚVIDAS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-robot text-blue-400 mr-2"></i>
+                        Automação Inteligente
+                    </h3>
+                    <p class="text-gray-400 mb-4">Soluções personalizadas em Python, PowerShell e Batch para otimizar seus processos empresariais.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/tiago-torres-stanis-3728a3196/" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Automação Python</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Scripts PowerShell</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Batch Automation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Integração de Sistemas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Consultoria em Automação</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Links Úteis</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Termos de Serviço</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contato</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gray-400 mr-3"></i>
+                            <span class="text-gray-400">(11) 96900-6891</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp text-gray-400 mr-3"></i>
+                            <a href="https://wa.me/5511969006891" class="text-gray-400 hover:text-white">WhatsApp</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-3"></i>
+                            <a href="mailto:ttstanis@outlook.com" class="text-gray-400 hover:text-white">ttstanis@outlook.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-gray-400 mr-3"></i>
+                            <span class="text-gray-400">Medianeira, PR</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-gray-400 mr-3"></i>
+                            <span class="text-gray-400">Seg-Sex: 9h às 18h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-center text-gray-400">
+                <p>© 2023 Automação Inteligente. Todos os direitos reservados.</p>
+                <p class="mt-2 md:mt-0"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading bar animation
+        window.addEventListener('load', function() {
+            const loadingBar = document.getElementById('loadingBar');
+            loadingBar.style.width = '100%';
+            setTimeout(() => {
+                loadingBar.style.opacity = '0';
+                setTimeout(() => {
+                    loadingBar.style.display = 'none';
+                }, 300);
+            }, 500);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                icon.classList.toggle('rotate-180');
+                
+                // Close other open FAQs
+                document.querySelectorAll('.faq-question').forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.nextElementSibling.classList.add('hidden');
+                        otherButton.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // WhatsApp button hover effect
+        const whatsappBtns = document.querySelectorAll('.whatsapp-btn');
+        whatsappBtns.forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.querySelector('i').style.transform = 'scale(1.2)';
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.querySelector('i').style.transform = '';
+            });
+        });
+
+        // Replace placeholder contact info
+        document.addEventListener('DOMContentLoaded', function() {
+            const phoneElements = document.querySelectorAll('[href*="wa.me/5511999999999"], [href="tel:5511969006891"]');
+            phoneElements.forEach(el => {
+                el.setAttribute('href', el.getAttribute('href').replace('5511999999999', '5511969006891'));
+            });
+            
+            const displayPhones = document.querySelectorAll('[contenteditable="false"]');
+            displayPhones.forEach(el => {
+                el.textContent = el.textContent.replace('99999-9999', '5511969006891');
+            });
+            
+            // Update email
+            const emails = document.querySelectorAll('[href^="mailto:"]');
+            emails.forEach(el => {
+                el.setAttribute('href', el.getAttribute('href').replace('contato@automacao.com', 'ttstanis@outlook.com'));
+            });
+        });
+
+        // Track CTA clicks
+        document.querySelectorAll('a[href*="whatsapp"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // Here you would typically send data to Google Analytics
+                console.log('WhatsApp CTA clicked:', this.href);
+            });
+        });
+    </script>
+</body>
+</html>
